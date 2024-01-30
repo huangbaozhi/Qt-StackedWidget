@@ -23,9 +23,9 @@ void StackWidget::initUi()
 
     QHBoxLayout *pHBtnLyt = new QHBoxLayout(this);
     m_pBtnOne = new QPushButton(this);
-    m_pBtnOne->setText("页面1");
+    m_pBtnOne->setText("按键1");
     m_pBtnTwo = new QPushButton(this);
-    m_pBtnTwo->setText("页面2");
+    m_pBtnTwo->setText("按键2");
     pHBtnLyt->addWidget(m_pBtnOne);
     pHBtnLyt->addWidget(m_pBtnTwo);
 
@@ -48,7 +48,7 @@ void StackWidget::sigAndslot()
 
 void StackWidget::slotSwitchPage()
 {
-    QPushButton* pBtn = dynamic_cast<QPushButton*>(QObject::sender());
+    QPushButton* pBtn = qobject_cast<QPushButton*>(QObject::sender());
 
     if(!pBtn)
     {
